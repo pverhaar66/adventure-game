@@ -2,29 +2,31 @@
 <html>
 <head>
 	<title>Adventure Game</title>
-	<link href="css/style.css" rel="stylesheet">
-
+	<link href="style.css" rel="stylesheet">
+ 	
 </head>
 <body>
 
-<div class="container">
+<main>
 
 	<div id="status"></div>
 
-	<div id="level_title">Start</div>
+	<div id="level_title">u ready to play the game?</div>
 
-	<div class="nav">
+	<img id="level_image" class="level_image" src="img/ffxiv.jpg">
 
-		<button id="option1" onclick="javascript:Level1()">Optie 1</button>
-		<button id="option2">Optie 2</button>
-		<button id="option3">Optie 3</button>
+<section>
+	<article>
+		<p id="chapter"> do you want to make your own adventure the voice asked, a magical world full of magic and what ever a usual fantasy world brings you </p>
+	
+		<button id="option1" onclick="javascript:Level1()">yes</button>
+		<button id="option2" onclick="javascript:game_over()">no</button>
+		<button id="option3" onclick="javascript:game_over()">???</button>
 
-	</div>
-
-	<img id="level_image" class="level_image" src="img/rpg.png">
-
-</div>
-
+	</article>
+</section>
+	
+</main>
 	<script src="js/game.js" type="text/javascript" ></script>
 </body>
 </html>

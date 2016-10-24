@@ -1,15 +1,42 @@
-* {
-	padding: 0px;
-	margin: 0px;
-}
-
 body {
-	background-color: silver;
+	background-image: url("img/black.jpg");
 	font-family: sans-serif;
 }
 
 #level_title {
-	font-size: 18px;
-	color: black;		
+	padding: 10px;
+	font-size: 30px;
+	color: white;		
+	font-weight: bolder;
+}
+button {
+	height: 50px;
+	width:100%;
+	background-color: #2C2C2C;
+	color: white;
+	font-size: 15px;
 	font-weight: bold;
+	margin-top: 5px;
+}
+
+
+main {
+	text-align: center;
+	width: 800px;
+	background-color: #2C2C2C;
+	margin: 0 auto;
+	border: solid white 4px;
+}
+
+
+#chapter {
+	border-top: solid black 2px;
+	border-bottom: solid black 2px;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
 }
