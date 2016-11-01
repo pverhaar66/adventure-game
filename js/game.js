@@ -91,9 +91,26 @@ document.getElementById('level_title').innerHTML = 'gameover';
 document.getElementById('level_image').src = 'img/game_over.png';
 }
 
-function gameover_forest() {
-			console.log ("GameOver")
-			console.log("inventory")
+function gameover_forest(solo) {
+	solo = solo || 'none'
+
+	if (solo == "solo") {
+		console.log ("GameOver")
+		console.log("inventory")
+
+	var chap = document.getElementById('chapter');
+	var opt1 = document.getElementById('option1');
+	var opt2 = document.getElementById('option2');
+	var opt3 = document.getElementById('option3');
+
+	chap.innerHTML = ' U fall asleep and get assaulted in ya sleep by a pack of wolfs';
+	opt1.style.display = 'none';
+	opt2.style.display = 'none';
+	opt3.style.display = 'none';
+
+	}else{
+		console.log ("GameOver")
+		console.log("inventory")
 
 	var chap = document.getElementById('chapter');
 	var opt1 = document.getElementById('option1');
@@ -104,12 +121,30 @@ function gameover_forest() {
 	opt1.style.display = 'none';
 	opt2.style.display = 'none';
 	opt3.style.display = 'none';
-
+}
 document.getElementById('level_title').innerHTML = 'gameover';
 document.getElementById('level_image').src = 'img/game_over.png';
 }
 
-function gameover2() {
+function gameover2(lava) {
+	lava = lava || 'none'
+
+	if (lava = "lava") {
+
+	console.log ("GameOver")
+	console.log("inventory")
+
+	var chap = document.getElementById('chapter');
+	var opt1 = document.getElementById('option1');
+	var opt2 = document.getElementById('option2');
+	var opt3 = document.getElementById('option3');
+
+	chap.innerHTML = ' As you leave him presumely dead on the floor, he suddenly grabbed both of you your leg and throws both of you in the lava ';
+	opt1.style.display = 'none';
+	opt2.style.display = 'none';
+	opt3.style.display = 'none';
+
+	}else{
 
 	console.log ("GameOver")
 	console.log("inventory")
@@ -123,13 +158,13 @@ function gameover2() {
 	opt1.style.display = 'none';
 	opt2.style.display = 'none';
 	opt3.style.display = 'none';
-
+}
 document.getElementById('level_title').innerHTML = 'gameover';
 document.getElementById('level_image').src = 'img/game_over.png';
 }
 
 function pickup(item) {
-inventory[item] = true
+inventory[item] = true;
 var element  =  document.getElementById(item);
 element.parentNode.removeChild(element);
 console.log(inventory);
@@ -145,13 +180,9 @@ function createItem(item, image) {
     items.appendChild(btn)
 }
 
-
-
 function checkpotion() {
-	if (inventory.hipotion == true) {
-
-		var opt3 = document.getElementById('option3');
-		opt3.setAttribute("onClick", "javascript:level_tower('tower')");	
+	if (inventory["hipotion"] == true) {
+		level_tower('tower');
 
 	}else{
 
@@ -162,9 +193,7 @@ function checkpotion() {
 
 function checkweapon() {
 	if (inventory.weapon == true) {
-
-		var opt3 = document.getElementById('option3');
-		opt3.setAttribute("onClick", "javascript:Level2()");	
+		Level2()	
 
 	}else{
 
@@ -249,7 +278,7 @@ function level3() {
 	console.log("level3")
 
 
-	createItem('weapon')
+	createItem("weapon", "ashbringer.jpg");
 
 	document.getElementById('level_title').innerHTML = 'welcome to Big Steves Blacksmith';
 	document.getElementById('level_image').src = 'img/Blacksmith.jpg';
@@ -258,7 +287,7 @@ function level3() {
 	var opt1 = document.getElementById('option1');
 	var opt2 = document.getElementById('option2');
 	var opt3 = document.getElementById('option3');
-	chap.innerHTML = ' Welcome to Big Steves Blacksmith . you see  holy dagger like wep and a grat sword in the showcase, i guess u came here for a weapon huh well you came to the right place, i got an damn fine weapon just 	';
+	chap.innerHTML = ' Welcome to Big Steves Blacksmith . you see  holy dagger like wep and a grat sword in the showcase, i guess u came here for a weapon huh well you came to the right place, i got an damn fine weapon just for you';
 	opt1.innerHTML = ' A Rock ';
 	opt2.innerHTML = ' Steal the holy dagger when he aint lookin ';
 	opt3.innerHTML = ' go back to the old man';
@@ -398,7 +427,7 @@ function level6() {
 		opt3.innerHTML = ' stare and do nothing ';
 
 		opt1.setAttribute("onClick", "javascript:level7('friends')");
-		opt2.setAttribute("onClick", "javascript:gameover1_5");
+		opt2.setAttribute("onClick", "alert('Dont u dare to sneer at her')");
 		opt3.setAttribute("onClick", "javascript:level7()");
 }
 
@@ -425,8 +454,8 @@ function level7(friends) {
 		opt3.innerHTML =' *stay silent* ';
 
 		opt1.setAttribute("onClick", "javascript:level8('gfriends')");
-		opt2.setAttribute("onClick", "javascript:level8()");
-		opt3.setAttribute("onClick", "javascript:level8()");
+		opt2.setAttribute("onClick", "javascript:level7()");
+		opt3.setAttribute("onClick", "javascript:level7()");
 
 		opt3.style.display = 'block'
 
@@ -493,7 +522,7 @@ function level8(gfriends) {
 		opt2.innerHTML =' screw this im out ';
 		opt3.innerHTML =' N/A ';
 
-
+		opt2.style.display = 'block'
 		opt3.style.display = 'none'
 
 		opt1.setAttribute("onClick", "javascript:level9()");		
@@ -559,7 +588,7 @@ function level9(ffriends) {
 
 		opt1.setAttribute("onClick", "javascript:level_Cave()");		
 		opt2.setAttribute("onClick", "javascript:level_Cave()");
-		opt3.setAttribute("onClick", "javascript:gameover_forest()");
+		opt3.setAttribute("onClick", "javascript:gameover_forest('solo')");
 
 	}
 
@@ -567,7 +596,7 @@ function level9(ffriends) {
 
 function level_Cave(lady) {
 	lady = lady || 'none'
-	console.log ("level10")
+	console.log ("level_cave")
 	console.log("inventory")
 
 
@@ -592,7 +621,7 @@ function level_Cave(lady) {
 		opt2.style.display = 'none';
 		opt3.style.display = 'none';
 
-		createItem('hipotion')
+		createItem("hipotion",	 "manapotion__89478.1404296843.220.220.jpg");
 
 	
 
@@ -619,8 +648,8 @@ function level_Cave(lady) {
 		opt3.innerHTML =' N/A ';
 
 		opt1.style.display = 'block'
-		opt2.style.display = 'block'
-		opt3.style.display = 'block'
+		opt2.style.display = 'none'
+		opt3.style.display = 'none'
 	
 
 		opt1.setAttribute("onClick", "javascript:level_tower()");		
@@ -634,7 +663,7 @@ function level_Cave(lady) {
 
 function level_tower(tower) {
 		tower = tower || 'none'
-	console.log ("level11")
+	console.log ("level_tower")
 	console.log("inventory")
 
 
@@ -691,7 +720,7 @@ function level_tower(tower) {
 
 
 function level_bahamut(primal) {
-	console.log ("level12")
+	console.log ("level_bahamut")
 	console.log("inventory")
 
 	document.getElementById('level_title').innerHTML = ' the mysterious person';
@@ -714,8 +743,8 @@ function level_bahamut(primal) {
 	
 
 		opt1.setAttribute("onClick", "javascript:level_Win()");		
-		opt2.setAttribute("onClick", "javascript:level_Win()");
-		opt3.setAttribute("onClick", "javascript:level_Win()");
+		opt2.setAttribute("onClick", "javascript:level_Win())");
+		opt3.setAttribute("onClick", "javascript:gameover2('lava')");
 
 
 
